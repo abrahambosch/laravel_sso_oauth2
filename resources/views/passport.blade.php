@@ -4,19 +4,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-
-                <h1>Welcome to {{ url("/") }}</h1>
-
-{{--
                 <div class="panel panel-default">
-                    <div class="panel-heading"></div>
+                    <div class="panel-heading">OAuth2 Passport</div>
 
                     <div class="panel-body">
 
+                        <passport-clients></passport-clients>
+                        <passport-authorized-clients></passport-authorized-clients>
+                        <passport-personal-access-tokens></passport-personal-access-tokens>
+
+
+
+
                     </div>
                 </div>
-             --}}
-
             </div>
         </div>
     </div>
