@@ -59,8 +59,14 @@
                                 </a>
                                 <div class="row margin-top-20">
                                     <div class="col-md-6">
-                                        <a href="{{ route("socialite.redirect", ['provider' => 'github']) }}" class="btn btn-block btn-social btn-github ">
+                                        <a href="{{ route("socialite.redirect", ['provider' => 'github']) }}" class="btn btn-block btn-social btn-github">
                                             <span class="fa fa-github"></span> Sign in with Github
+                                        </a>
+                                        <a href="{{ route("socialite.redirect", ['provider' => 'facebook']) }}" class="btn btn-block btn-social btn-facebook">
+                                            <span class="fa fa-facebook"></span> Sign in with Facebook
+                                        </a>
+                                        <a href="{{ route("socialite.redirect", ['provider' => 'google']) }}" class="btn btn-block btn-social btn-google">
+                                            <span class="fa fa-google"></span> Sign in with google
                                         </a>
                                     </div>
                                 </div>
