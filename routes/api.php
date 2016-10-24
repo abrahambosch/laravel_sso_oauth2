@@ -15,4 +15,12 @@ use Illuminate\Http\Request;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
+
 })->middleware('auth:api');
+
+Route::get('/getUserProfile', 'UserController@getUserProfile');
+Route::get('/user/profile', 'UserController@getUserProfile')->middleware('auth:api');
+
+
+
+

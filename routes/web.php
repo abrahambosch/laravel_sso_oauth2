@@ -37,8 +37,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/single-signon', function () {
     // Build the query parameter string to pass auth information to our request
     $query = http_build_query([
-        'client_id' => 3,
-        'redirect_uri' => 'http://oauthconsumer.dev/oauth_callback',
+        'client_id' => 1,
+        'redirect_uri' => 'http://oauthconsumer.dev/oauth/zerotouch/callback',
         'response_type' => 'code',
         'scope' => ''
     ]);

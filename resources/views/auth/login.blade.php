@@ -66,7 +66,11 @@
                                             <span class="fa fa-facebook"></span> Sign in with Facebook
                                         </a>
                                         <a href="{{ route("socialite.redirect", ['provider' => 'google']) }}" class="btn btn-block btn-social btn-google">
-                                            <span class="fa fa-google"></span> Sign in with google
+                                            <span class="fa fa-google"></span> Sign in with Google
+                                        </a>
+
+                                        <a href="{{ route("socialite.redirect", ['provider' => 'zerotouch']) }}" class="btn btn-block btn-social btn-openid">
+                                            <span class="fa fa-universal-access"></span> Sign in with ZeroTouch
                                         </a>
                                     </div>
                                 </div>
