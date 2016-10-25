@@ -19,9 +19,8 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\EventListener',
         ],
         'SocialiteProviders\Manager\SocialiteWasCalled' => [
-            'App\Listeners\ZeroTouchExtendSocialite',
+            'SocialiteProviders\ZeroTouch\ZeroTouchExtendSocialite'
         ],
-
     ];
 
     /**

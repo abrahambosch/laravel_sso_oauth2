@@ -14,14 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
-        $socialite->extend(
-            'zerotouch',
-            function ($app) use ($socialite) {
-                $config = $app['config']['services.zerotouch'];
-                return $socialite->buildProvider(ZeroTouchProvider::class, $config);
-            }
-        );
+        //
     }
 
     /**

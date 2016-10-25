@@ -24,13 +24,10 @@ class SocialAuthController extends Controller
      */
     public function handleProviderCallback(SocialAccountService $service, $provider='github')
     {
-        $user = $service->createOrGetUser(Socialite::driver($provider)->user(), $provider);
-
+        //$socialiteUser = Socialite::driver($provider)->user();    // doesn't work for some reason!!
+        $socialiteUser = Socialite::with($provider)->user();
+        $user = $service->createOrGetUser($socialiteUser, $provider);
         auth()->login($user);
-
-echo "got here" . __METHOD__ . " - " . __LINE__ . "<br>";
-        dd($user);
-
         return redirect()->to('/home');
     }
 }

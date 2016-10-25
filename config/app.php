@@ -164,7 +164,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         Laravel\Passport\PassportServiceProvider::class,
-        Laravel\Socialite\SocialiteServiceProvider::class,
+        SocialiteProviders\Manager\ServiceProvider::class,
+        SocialiteProviders\Generators\GeneratorsServiceProvider::class, // https://github.com/SocialiteProviders/Generators // php artisan make:socialite Zweb --spec=oauth2 --author="Abraham Bosch" --email=abrahambosch@gmail.com
 
         /*
          * Package Service Providers...
