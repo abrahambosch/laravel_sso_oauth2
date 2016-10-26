@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Laravel\Passport\Http\Middleware\CreateFreshApiToken::class,       // This Passport middleware will attach a laravel_token cookie to your outgoing responses. This cookie contains an encrypted JWT that Passport will use to authenticate API requests from your JavaScript application. Now, you may make requests to your application's API without explicitly passing an access token: https://laravel.com/docs/5.3/passport
         ],
 
         'api' => [
