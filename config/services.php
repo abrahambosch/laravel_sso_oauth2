@@ -51,6 +51,11 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT'),
     ],
+    'twitter' => [
+        'client_id' => env('TWITTER_CLIENT_ID'),
+        'client_secret' => env('TWITTER_CLIENT_SECRET'),
+        'redirect' => env('TWITTER_REDIRECT'),
+    ],
     'zerotouch' => [
         'client_id' => env('ZEROTOUCH_CLIENT_ID'),
         'client_secret' => env('ZEROTOUCH_CLIENT_SECRET'),
