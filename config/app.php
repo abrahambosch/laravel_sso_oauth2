@@ -167,6 +167,8 @@ return [
         SocialiteProviders\Manager\ServiceProvider::class,
         SocialiteProviders\Generators\GeneratorsServiceProvider::class, // https://github.com/SocialiteProviders/Generators // php artisan make:socialite Zweb --spec=oauth2 --author="Abraham Bosch" --email=abrahambosch@gmail.com
 
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -231,6 +233,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
+
 
     ],
 

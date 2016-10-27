@@ -70,8 +70,35 @@ Route::get('oauth_callback', function (Request $request) {
 });
 
 
+Route::get('/jwt', function (Request $request) {
+    //$user = $request->user();
+    $user = Auth::user();
+
+    $token = JWTAuth::fromUser($user);
+
+    return Response::json(compact('token'));
+})->middleware('auth');
+
+Route::get('/restricted', [
+    'before' => 'jwt-auth',
+    function () {
+        $token = JWTAuth::getToken();
+        $user = JWTAuth::toUser($token);
+
+        return Response::json([
+            'data' => [
+                'email' => $user->email,
+                'registered_at' => $user->created_at->toDateTimeString()
+            ]
+        ]);
+    }
+]);
+
+
 
 // socialite routes
 // todo: make this generic so provider is specified in the url
 Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name("socialite.redirect");
 Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name("socialite.callback");
+
+
