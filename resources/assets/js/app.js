@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./facebookAutoLogin.jquery');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

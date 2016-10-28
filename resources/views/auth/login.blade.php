@@ -85,4 +85,43 @@
         </div>
     </div>
 </div>
+
+
+<!--
+Below we include the Login Button social plugin. This button uses
+the JavaScript SDK to present a graphical Login button that triggers
+the FB.login() function when clicked.
+-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-heading">Facebook Javascript Login</div>
+                <div class="panel-body">
+
+
+                    <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button> -->
+
+                    <div id="status">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection
+
+@section('footer_scripts')
+<script>
+
+    $("body").facebookAutoLogon({client_id: '<?php echo config('services.facebook.client_id'); ?>'});
+
+</script>
+
+
+
+
 @endsection

@@ -13,6 +13,8 @@
 
 use Illuminate\Http\Request;
 
+use App\SocialAccount;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,6 +34,27 @@ Route::get('/home', 'HomeController@index');
 // socialite routes
 Route::get('auth/{provider}', 'Auth\SocialAuthController@redirectToProvider')->name("socialite.redirect");
 Route::get('auth/{provider}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name("socialite.callback");
+Route::get('auth/facebook/decodeSignedRequest', 'Auth\SocialAuthController@facebookDecodeSignedRequest');
+Route::get('auth/facebook/signinFacebookUser', 'Auth\SocialAuthController@signinFacebookUser');
+
+
+
+Route::get('/getSocialAccounts', function (Request $request) {
+    //$user = $request->user();
+    $provider_user_id = $request->input('provider_user_id');
+    //$user = Auth::user();
+    $user = null;
+
+    //$socialAccounts = $user->socialAccounts()->get();
+    $socialAccounts = SocialAccount::where(['provider_user_id' => $provider_user_id, 'provider' => 'facebook'])->first();
+
+    //$socialAccounts = $user->socialAccounts()->where(['provider_user_id' => $provider_user_id, 'provider' => 'facebook'])->first();
+    if ($socialAccounts) {
+        $user = $socialAccounts->user;
+    }
+
+    return Response::json(compact('socialAccounts', 'user'));
+})->middleware('auth');
 
 
 /**
